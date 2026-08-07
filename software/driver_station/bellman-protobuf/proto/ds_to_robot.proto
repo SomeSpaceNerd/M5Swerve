@@ -1,0 +1,24 @@
+/* This data is sent from the Driver Station to the Robot via UDP unicast port 11130 at 100Hz */
+
+syntax = "proto3";
+
+message DSToRobot {
+    uint64 timestamp_us = 1;
+    uint32 sequence = 2;
+    string version = 3;
+    bool enabled = 4;
+    bool e_stop = 5;
+    bool restart_code = 6;
+    bool restart_controller = 7;
+    string opmode = 8;
+
+    message Joystick {
+        uint32 id = 1;
+        repeated bool buttons = 2;
+        uint32 direction = 3;
+        repeated float axes = 4;
+    }
+
+    repeated Joystick controls = 9;
+}
+

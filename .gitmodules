@@ -1,0 +1,3 @@
+[submodule "software/Driver Station/femtoBotics-protobuf/nanopb"]
+	path = software/Driver Station/femtoBotics-protobuf/nanopb
+	url = https://github.com/nanopb/nanopb.git

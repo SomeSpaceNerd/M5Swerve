@@ -1,0 +1,19 @@
+/* This data is sent from the Robot to the Driver Station via UDP unicast port 11140 at 100Hz */
+
+syntax = "proto3";
+
+message RobotToDS {
+    uint64 timestamp_us = 1;
+    uint32 sequence = 2;
+    string version = 3;
+    int32 battery_percent = 4;
+    float battery_volts = 5;
+    float cpu = 6;
+    float ram = 7;
+    bool has_ds = 8;
+    bool enabled = 9;
+    bool clear_enable = 10;
+    bool e_stopped = 11;
+    repeated string opmodes = 12;
+}
+

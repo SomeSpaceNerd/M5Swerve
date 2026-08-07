@@ -1,0 +1,5 @@
+RobotLog.logs max_count:16 # This may be reduced on RAM-constrained systems
+RobotLog.LogEntry.level max_size:16
+RobotLog.LogEntry.caller max_size:64
+RobotLog.LogEntry.contents max_size:512 # This may be reduced on RAM-constrained systems
+

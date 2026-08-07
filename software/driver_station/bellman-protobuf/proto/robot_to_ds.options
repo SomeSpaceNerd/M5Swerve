@@ -1,0 +1,4 @@
+RobotToDS.version max_size:16
+RobotToDS.opmodes max_count:16
+RobotToDS.opmodes max_size:64
+

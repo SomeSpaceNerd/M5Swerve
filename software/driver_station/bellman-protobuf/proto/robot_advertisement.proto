@@ -1,0 +1,20 @@
+/**
+ * This data is sent from the robot on UDP multicast 239.ID.NUM.0:11150 at 50Hz
+ * It is intended to be received by the driver station to detect the robot or additional programs to get the robot's status
+ */
+
+ syntax = "proto3";
+
+ message RobotAd {
+    uint64 timestamp_us = 1;
+    string version = 2;
+    int32 battery_percent = 3;
+    float battery_volts = 4;
+    float cpu = 5;
+    float ram = 6;
+    bool has_ds = 7;
+    bool enabled = 8;
+    bool e_stopped = 9;
+    string opmode = 10;
+ }
+
