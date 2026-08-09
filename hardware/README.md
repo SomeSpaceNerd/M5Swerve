@@ -64,6 +64,18 @@ The assembly process for M5Swerve is pretty straightforward if you use the CAD f
 * The servo has a limited range of motion so it must be aligned correctly, install the 2 M2x4 screws and M2 nuts that hold the servo in place loosely, as well as the gear and it's M2x6 screw (the gear is a tight press fit), command the servo to 30 steps (default minimum position) and align the steering mount so the notch in the steering mount aligns with the notch in the retaining ring closest to the long side with the screw holes (so when looking at the modules top-down with the servo at the bottom that is the notch on the right side for A variant modules and the notch on the left side for B), then slide the servo into place and fully secure it down
 * If you notice the drive gears are rubbing (specifically the input gear and sun gear) add 1-2 M3 washers between the legs of the roller mount and face of the main mount to shim the parts a bit
 
+## Custom Firmwares
+
+I have made 2 forks of M5Stack firmware for this project , one for the Roller485s and one for the StampIO. Both must be flashed using an ST-LINK or similar programmer and instructions can be found in their respective repo
+
+### Roller485
+
+My custom Roller485 firmware allows them to communicate at 1MBaud instead of the default maximum of 115200, which is necessary for the tight control loop used by the robot software to work. [Firmware download and flashing instructions are available here.](https://github.com/SomeSpaceNerd/M5Unit-Roller485-Internal-FW)
+
+### StampIO
+
+My custom StampIO firmware simply makes it drive a chain of 7 neopixels instead of just 1 per pin, specifically for the 7 pixel neopixel sequin used in this project as the RIL. [Firmware download and flashing instructions are available here](https://github.com/SomeSpaceNerd/M5Unit-EXTIO2-Internal-FW)
+
 ## Wiring
 
 The wiring can be slightly complex and convoluted at times, so again here is a simple list of what you need to know to assemble it
