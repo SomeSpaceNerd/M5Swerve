@@ -61,6 +61,7 @@ This is a section for parts that may not be contained in or immediately obvious 
 The assembly process for M5Swerve is pretty straightforward if you use the CAD for reference, but here are a few notes that will be useful
 
 * The Roller Mount part requires 8 heat set inserts, 4 are placed in the bottom of the legs and 4 at the top, the top ones MUST be inserted from the back of the part (the side that was on the printbed)
+* The servo has a limited range of motion so it must be aligned correctly, install the 2 M2x4 screws and M2 nuts that hold the servo in place loosely, as well as the gear and it's M2x6 screw (the gear is a tight press fit), command the servo to 30 steps (default minimum position) and align the steering mount so the notch in the steering mount aligns with the notch in the retaining ring closest to the long side with the screw holes (so when looking at the modules top-down with the servo at the bottom that is the notch on the right side for A variant modules and the notch on the left side for B), then slide the servo into place and fully secure it down
 * If you notice the drive gears are rubbing (specifically the input gear and sun gear) add 1-2 M3 washers between the legs of the roller mount and face of the main mount to shim the parts a bit
 
 ## Wiring

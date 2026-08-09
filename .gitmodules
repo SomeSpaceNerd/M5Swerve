@@ -1,3 +1,6 @@
-[submodule "software/Driver Station/femtoBotics-protobuf/nanopb"]
-	path = software/Driver Station/femtoBotics-protobuf/nanopb
+[submodule "software/Driver Station/bellman-protobuf/nanopb"]
+	path = software/Driver Station/bellman-protobuf/nanopb
+	url = https://github.com/nanopb/nanopb.git
+[submodule "software/robot_code/bellman/bellman-protobuf/nanopb"]
+	path = software/robot_code/bellman/bellman-protobuf/nanopb
 	url = https://github.com/nanopb/nanopb.git

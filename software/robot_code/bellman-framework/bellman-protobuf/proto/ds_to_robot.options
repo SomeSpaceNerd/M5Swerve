@@ -1,0 +1,5 @@
+DSToRobot.version max_size:16
+DSToRobot.controls max_count:7
+DSToRobot.opmode max_size:64
+DSToRobot.Joystick.buttons max_count:20
+DSToRobot.Joystick.axes max_count:10

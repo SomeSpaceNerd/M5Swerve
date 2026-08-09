@@ -1,0 +1,15 @@
+/* This data is sent from the Robot to the Driver Station via TCP port 11140 at 100Hz */
+
+syntax = "proto3";
+
+message RobotLog {
+    uint64 timestamp_us = 1;
+    uint32 sequence = 2;
+
+    message LogEntry {
+        string level = 1;
+        string caller = 2;
+        string contents = 3;
+    }
+    repeated LogEntry logs = 3;
+}

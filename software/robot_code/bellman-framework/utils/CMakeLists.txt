@@ -1,0 +1,3 @@
+add_library(robot_utils INTERFACE)
+target_include_directories(robot_utils INTERFACE include)
+target_compile_features(robot_utils INTERFACE cxx_std_20)
