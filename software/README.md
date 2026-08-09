@@ -12,6 +12,7 @@ It was using in Qt Creator and heavily relies on the Qt framework, so the best w
 
 This is the actual code that runs on the robot controller itself, containing the framework (runtime, HAL, utils, etc) as well as M5Swerve specific code for TeleOp and swerve kinematics
 
+Compilation is done on the robot controller itself and is designed to work best with the Debian images from M5Stack. You can use the deploy_linux batch file or python file directly to deploy your code to the robot controller.
 
 
 
