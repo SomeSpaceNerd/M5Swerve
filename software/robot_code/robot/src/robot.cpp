@@ -229,6 +229,9 @@ void Robot::FieldToRobot(double* vx, double* vy)
 	// TODO: Would be a good idea to tune the 0.5s value at the end
 	theta = theta + (m_bno055->GetGyroscope().z - m_gyro_offset) * (Constants::PI / 180.0) * 0.05;
 
+	// Invert theta to align with CW+ rotation convention
+	theta = -theta;
+
 	// Save the original field-relative commands
 	double fieldX = *vx;
 	double fieldY = *vy;
