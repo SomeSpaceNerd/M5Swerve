@@ -222,15 +222,18 @@ Robot::ModuleState Robot::CalculateModule(double vx_robot, double vy_robot, doub
 // Convert field-frame inputs to robot-frame commands
 void Robot::FieldToRobot(double* vx, double* vy)
 {
-	// Current robot heading in radians
-	double theta = m_bno055->GetEulerAngles().z * Constants::PI / 180.0;
-
-	// Velocity-based prediction to make field movements smoother
-	// TODO: Would be a good idea to tune the 0.5s value at the end
-	theta = theta + (m_bno055->GetGyroscope().z - m_gyro_offset) * (Constants::PI / 180.0) * 0.05;
-
-	// Invert theta to align with CW+ rotation convention
-	theta = -theta;
+	// Current fused heading and angular velocity
+	double yaw_deg = m_bno055->GetEulerAngles().z;
+	double yaw_rate_dps = m_bno055->GetGyroscope().z;
+	
+	// Calculate heading relative to the user-defined field zero
+	double relative_yaw_deg = yaw_deg - m_gyro_offset;
+	
+	// Predict heading 50 ms into the future
+	double predicted_yaw_deg = relative_yaw_deg + yaw_rate_dps * 0.05;
+	
+	// Convert to radians and invert to match coordinate conventions
+	double theta = -predicted_yaw_deg * Constants::PI / 180.0;
 
 	// Save the original field-relative commands
 	double fieldX = *vx;
